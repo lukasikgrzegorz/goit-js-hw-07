@@ -22,7 +22,7 @@ for (let item of galleryItems) {
     gallery.append(newItem); 
 }
 
-let actualInstance;
+let instance;
 
 gallery.addEventListener("click", (e) => {
     e.preventDefault();
@@ -34,15 +34,13 @@ gallery.addEventListener("click", (e) => {
     newImage.src = e.target.getAttribute("data-source");
     content.appendChild(newImage);
    
-    const instance = basicLightbox.create(content);
+    instance = basicLightbox.create(content);
     instance.show();
-
-    actualInstance = instance;
 
 })
 
  document.addEventListener("keydown", e => {
-        if(e.key==="Escape"){actualInstance.close();}
+        if(e.key==="Escape"){instance.close();}
     });
 		
 
