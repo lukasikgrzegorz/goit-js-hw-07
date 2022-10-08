@@ -25,11 +25,6 @@ let lightboxElement = new SimpleLightbox('.gallery__link', {
     captionDelay: 250,
 });
 
-lightboxElement.on('show.simplelightbox', function () {
-    
-});
-
-
 gallery.addEventListener("click", (e) => {
     e.preventDefault();  
 })

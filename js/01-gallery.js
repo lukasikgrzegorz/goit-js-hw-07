@@ -22,6 +22,8 @@ for (let item of galleryItems) {
     gallery.append(newItem); 
 }
 
+let actualInstance;
+
 gallery.addEventListener("click", (e) => {
     e.preventDefault();
 
@@ -35,14 +37,13 @@ gallery.addEventListener("click", (e) => {
     const instance = basicLightbox.create(content);
     instance.show();
 
-    document.addEventListener("keydown", e => {
-        if(e.key==="Escape"){instance.close();}
-    });
+    actualInstance = instance;
 
 })
 
-
-
+ document.addEventListener("keydown", e => {
+        if(e.key==="Escape"){actualInstance.close();}
+    });
 		
 
 	
